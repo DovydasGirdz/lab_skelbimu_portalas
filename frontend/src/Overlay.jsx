@@ -1,10 +1,14 @@
 import React from "react"
 
+export var set_state_overlay_message
+
 const Overlay = function ()
 {
     // states
 
-    const [state_message, set_state_message] = React.useState(null)
+    const array = React.useState(null)
+    const state_overlay_message = array[0] 
+    set_state_overlay_message = array[1]
 
     ///
 
@@ -25,5 +29,4 @@ const Overlay = function ()
     </div>
 }
 
-export { set_state_message }
-export default Overlay
+export default { Overlay, set_state_overlay_message }

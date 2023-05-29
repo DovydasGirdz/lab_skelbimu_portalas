@@ -14,8 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
-/* harmony import */ var _pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Page_sign_up.jsx */ "./src/pages/Page_sign_up.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
+/* harmony import */ var _pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Page_sign_up.jsx */ "./src/pages/Page_sign_up.jsx");
+
 
 
 
@@ -28,18 +30,61 @@ const App = function () {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, function () {
     if (state_page === "Page_sign_in") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         set_state_page: set_state_page
       });
     }
     if (state_page === "Page_sign_up") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         set_state_page: set_state_page
       });
     }
-  }());
+  }(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/Overlay.jsx":
+/*!*************************!*\
+  !*** ./src/Overlay.jsx ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   set_state_overlay_message: () => (/* binding */ set_state_overlay_message)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var set_state_overlay_message;
+const Overlay = function () {
+  // states
+
+  const array = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null);
+  const state_overlay_message = array[0];
+  set_state_overlay_message = array[1];
+
+  ///
+
+  if (state_overlay_message === null) return;
+
+  ///
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      position: "fixed",
+      inset: "0 0 0 0",
+      backgroundColor: "rgba(80, 80, 80, 0.80)"
+    }
+  }, state_overlay_message);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  Overlay,
+  set_state_overlay_message
+});
 
 /***/ }),
 
@@ -157,6 +202,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Header_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header.jsx */ "./src/components/Header.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _services_service_sign_up_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/service_sign_up.mjs */ "./src/services/service_sign_up.mjs");
+
+
 
 
 const Page_sign_up = function (props) {
@@ -191,10 +240,12 @@ const Page_sign_up = function (props) {
     type: "password",
     ref: ref_input_password
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    onClick: function () {
+    onClick: async function () {
       const username = ref_input_username.current.value;
       const password = ref_input_password.current.value;
-      alert(username + " " + password);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_sign_up...");
+      const result_of_service_sign_up = await (0,_services_service_sign_up_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])(username, password);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
     }
   }, "Sign Up")));
 };
@@ -33571,6 +33622,77 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./src/services/service_sign_up.mjs":
+/*!******************************************!*\
+  !*** ./src/services/service_sign_up.mjs ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const service_sign_up = async function (param_username, param_password)
+{
+    // method 
+
+    const method = "POST"
+
+    // uri
+
+    const uri = "/api/sign_up"
+
+    // headers
+    
+    const headers =
+    {
+        "Content-Type": "application/json"
+    }
+
+    // body
+
+    const body = 
+    {
+        username: param_username,
+        password: param_password
+    } 
+
+    const result_of_fetch =  await fetch (
+        uri,
+        {
+            method: method,
+            headers: headers,
+            body: JSON.stringify(body)
+        }
+    )
+
+    // error: invalid status codde
+
+    if (result_of_fetch.status !== 200 &&
+        result_of_fetch.status !== 400)
+    {
+        return { status: "error", message: "Invalid status code"}
+    }
+
+    // error
+
+    if (result_of_fetch.status === 200)
+    {
+        const body = await result_of_fetch.json()
+
+        const message = body.message
+
+        return {status: "error", message: message}
+    }
+
+    // success
+    return {status: "success"}
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_sign_up);
 
 /***/ })
 

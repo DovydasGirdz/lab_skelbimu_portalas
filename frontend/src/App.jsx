@@ -1,4 +1,5 @@
 import React from 'react'
+import Overlay from './Overlay.jsx'
 import Page_sign_in from './pages/Page_sign_in.jsx'
 import Page_sign_up from './pages/Page_sign_up.jsx'
 
@@ -25,6 +26,8 @@ const App = function()
             } 
         }()
     }
+
+    <Overlay></Overlay>
     </>
 }
 

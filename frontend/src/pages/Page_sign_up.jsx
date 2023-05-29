@@ -1,5 +1,7 @@
 import React from "react"
 import Header from "../components/Header.jsx"
+import { set_state_overlay_message } from "../Overlay.jsx"
+import service_sign_up from "../services/service_sign_up.mjs"
 
 const Page_sign_up = function (props)
 {
@@ -40,12 +42,16 @@ const Page_sign_up = function (props)
             <button
                 onClick=
                 {
-                    function ()
+                    async function ()
                     {
                         const username = ref_input_username.current.value
                         const password = ref_input_password.current.value
 
-                        alert(username + " " + password)
+                        set_state_overlay_message("service_sign_up...")
+
+                        const result_of_service_sign_up = await service_sign_up(username, password)
+
+                        set_state_overlay_message(null)
                     }
                 }
             >
