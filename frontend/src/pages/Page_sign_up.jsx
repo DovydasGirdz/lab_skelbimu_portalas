@@ -1,65 +1,101 @@
 import React from "react"
-import Header from "../components/Header.jsx"
-import { set_state_overlay_message } from "../Overlay.jsx"
 import service_sign_up from "../services/service_sign_up.mjs"
+import { set_state_overlay_message } from "../Overlay.jsx"
+import { set_state_alert_message } from "../Alert.jsx"
+import Header from "../components/header/Header.jsx"
 
 const Page_sign_up = function (props)
 {
-    // props
-
-    const set_state_page = props.set_state_page
-
     // refs
 
     const ref_input_username = React.useRef()
+
     const ref_input_password = React.useRef()
+
     //
 
     return <>
 
-        <Header set_state_page={set_state_page}></Header>
+        <Header
+        ></Header>
 
         <main
             style=
             {
                 {
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    padding: "5rem"
+                    width: "fit-content",
+                    padding: "1em",
+                    border: "0",
+                    margin: "1em auto 0 auto",
+                    textAlign: "left",
+                    backgroundColor: "rgb(240, 240, 240)"
                 }
-            }>
+            }
+        >
+            <div>Username:</div>
 
-            <div style={{padding: "2rem"}}>PAGE SIGN UP</div>
+            <input
+                ref={ref_input_username}
+                type="text"
+            ></input>
 
-            <div>Username: </div>
-            <input type="text" ref={ref_input_username}></input>
+            <div>Password:</div>
 
-            <div>Password: </div>
-            <input type="password" ref={ref_input_password}></input>
+            <input
+                ref={ref_input_password}
+                type="password"
+            ></input>
 
             <button
+                style=
+                {
+                    {
+                        display: "block",
+                        margin: "1em 0 0 0",
+                    }
+                }
                 onClick=
                 {
                     async function ()
                     {
+                        // inputs
+
                         const username = ref_input_username.current.value
                         const password = ref_input_password.current.value
 
+                        // service_sign_up
+
                         set_state_overlay_message("service_sign_up...")
 
-                        const result_of_service_sign_up = await service_sign_up(username, password)
+                        const result_of_service_sign_up =
+                            await service_sign_up(
+                                username,
+                                password
+                            )
 
                         set_state_overlay_message(null)
+
+                        // error:
+
+                        if (result_of_service_sign_up.status === "error")
+                        {
+                            set_state_alert_message(
+                                result_of_service_sign_up.message
+                            )
+                            return
+                        }
+
+                        // success
+
+                        set_state_alert_message(
+                            "success"
+                        )
                     }
                 }
-            >
-                Sign Up
-            </button>
+            >Sign-up</button>
+
         </main>
     </>
-
 }
 
 export default Page_sign_up

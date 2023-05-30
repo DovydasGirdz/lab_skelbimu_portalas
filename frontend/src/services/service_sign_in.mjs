@@ -1,4 +1,4 @@
-const service_sign_up = async function (
+const service_sign_in = async function (
     param_username,
     param_password
 )
@@ -9,7 +9,7 @@ const service_sign_up = async function (
 
     // uri
 
-    const uri = "/api/sign_up"
+    const uri = "/api/sign_in"
 
     // headers
 
@@ -59,4 +59,4 @@ const service_sign_up = async function (
     return { status: "success" }
 }
 
-export default service_sign_up
+export default service_sign_in

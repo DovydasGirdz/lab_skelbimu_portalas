@@ -1,6 +1,7 @@
-import path from 'path'
+import path from "path"
 
-export default {
+export default 
+{
     entry: ["./src/index.mjs"],
     output:
     {
@@ -13,7 +14,7 @@ export default {
     {
         topLevelAwait: true
     },
-    module:
+    module: 
     {
         rules: [
             {

@@ -1,37 +1,18 @@
-const service_sign_up = async function (
-    param_username,
-    param_password
-)
+const service_sign_out = async function ()
 {
     // method
 
-    const method = "POST"
+    const method = "GET"
 
     // uri
 
-    const uri = "/api/sign_up"
+    const uri = "/api/sign_out"
 
-    // headers
-
-    const headers =
-    {
-        "Content-Type": "application/json"
-    }
-
-    // body
-
-    const body =
-    {
-        username: param_username,
-        password: param_password
-    }
 
     const result_of_fetch = await fetch(
         uri,
         {
-            method: method,
-            headers: headers,
-            body: JSON.stringify(body)
+            method: method
         }
     )
 
@@ -59,4 +40,4 @@ const service_sign_up = async function (
     return { status: "success" }
 }
 
-export default service_sign_up
+export default service_sign_out
