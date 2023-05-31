@@ -22,6 +22,16 @@ const Header_guest = function ()
             {
                 function ()
                 {
+                    set_state_page("Page_visi_skelbimai")
+                }
+            }
+        >Visi skelbimai</button>
+
+        <button
+            onClick=
+            {
+                function ()
+                {
                     set_state_page("Page_sign_in")
                 }
             }

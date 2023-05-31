@@ -10,7 +10,7 @@ const List = function (props)
 {
     // states
 
-    const [state_kategorijos, set_state_kategorijos] = React.useState()
+    const [state_kategorijos, set_state_kategorijos] = React.useState([])
 
     //
 

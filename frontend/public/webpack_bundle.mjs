@@ -187,6 +187,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
 /* harmony import */ var _pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Page_sign_up.jsx */ "./src/pages/Page_sign_up.jsx");
 /* harmony import */ var _pages_page_skelbimai_Page_skelbimai_create_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/page_skelbimai/Page_skelbimai_create.jsx */ "./src/pages/page_skelbimai/Page_skelbimai_create.jsx");
+/* harmony import */ var _pages_page_skelbimai_Page_visi_skelbimai_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/page_skelbimai/Page_visi_skelbimai.jsx */ "./src/pages/page_skelbimai/Page_visi_skelbimai.jsx");
+
 
 
 
@@ -212,6 +214,9 @@ const Page = function () {
   }
   if (state_page === "Page_skelbimai_create") {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_page_skelbimai_Page_skelbimai_create_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+  }
+  if (state_page === "Page_visi_skelbimai") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_page_skelbimai_Page_visi_skelbimai_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null);
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
@@ -254,6 +259,10 @@ const Header_admin = function () {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "admin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_visi_skelbimai");
+    }
+  }, "Visi skelbimai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function () {
       (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_kategorijos");
     }
   }, "Kategorijos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -276,7 +285,7 @@ const Header_admin = function () {
       (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_username)(null);
       (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_sign_in");
     }
-  }, "Sing-out"));
+  }, "Sign-out"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header_admin);
 
@@ -310,6 +319,10 @@ const Header_guest = function () {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_visi_skelbimai");
+    }
+  }, "Visi skelbimai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function () {
       (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_sign_in");
     }
   }, "Sign-in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -339,6 +352,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/service_sign_out.mjs */ "./src/services/service_sign_out.mjs");
 /* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Page.jsx */ "./src/Page.jsx");
 /* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Header.jsx */ "./src/Header.jsx");
+/* harmony import */ var _services_service_skelbimai_find_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/service_skelbimai_find.mjs */ "./src/services/service_skelbimai_find.mjs");
+/* harmony import */ var _pages_page_skelbimai_Page_visi_skelbimai_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../pages/page_skelbimai/Page_visi_skelbimai.jsx */ "./src/pages/page_skelbimai/Page_visi_skelbimai.jsx");
+
+
 
 
 
@@ -357,6 +374,10 @@ const Header_user = function () {
       backgroundColor: "rgb(240, 240, 240)"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, _Header_jsx__WEBPACK_IMPORTED_MODULE_5__.state_username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function () {
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_visi_skelbimai");
+    }
+  }, "Visi skelbimai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
       (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_skelbimai_create");
     }
@@ -380,7 +401,7 @@ const Header_user = function () {
       (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_5__.set_state_username)(null);
       (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_sign_in");
     }
-  }, "Sing-out"));
+  }, "Sign-out"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header_user);
 
@@ -402,6 +423,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
 /* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Alert.jsx */ "./src/Alert.jsx");
 /* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Header.jsx */ "./src/Header.jsx");
+/* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Page.jsx */ "./src/Page.jsx");
+
 
 
 
@@ -457,6 +480,7 @@ const Page_sign_in = function () {
       // success
 
       (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_username)(username);
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_5__.set_state_page)("Page_visi_skelbimai");
     }
   }, "Sing-in")));
 };
@@ -703,7 +727,7 @@ var update;
 const List = function (props) {
   // states
 
-  const [state_kategorijos, set_state_kategorijos] = react__WEBPACK_IMPORTED_MODULE_0___default().useState();
+  const [state_kategorijos, set_state_kategorijos] = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]);
 
   //
 
@@ -782,6 +806,53 @@ const Page_kategorijos = function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Create_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_List_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_kategorijos);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Card/Skelbimai_card.jsx":
+/*!**********************************************************!*\
+  !*** ./src/pages/page_skelbimai/Card/Skelbimai_card.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const Skelbimai_card = function (props) {
+  // props
+
+  const autorius = props.autorius;
+  const pavadinimas = props.pavadinimas;
+  const kategorija = props.kategorija;
+  const aprasas = props.aprasas;
+  const kaina = props.kaina;
+  const image_base64 = props.image_base64;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      width: "20%",
+      display: "flex",
+      gap: "15px",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(80,80,80,0.15)",
+      border: "2px solid black",
+      paddingBottom: "15px",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    src: image_base64,
+    alt: "",
+    style: {
+      width: "100%"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Autorius: ", autorius), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Pavadinimas: ", pavadinimas), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Kategorija: ", kategorija), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Aprasas: ", aprasas), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Kaina: ", kaina, " eur")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skelbimai_card);
 
 /***/ }),
 
@@ -1011,7 +1082,7 @@ const Page_skelbimai_create = function () {
       const pavadinimas = ref_input_pavadinimas.current.value;
       const kategorija = ref_kategorija.current;
       const aprasas = ref_input_aprasas.current.value;
-      const kaina = ref_input_kaina.current.value;
+      const kaina = Number(ref_input_kaina.current.value);
       const image_base64 = ref_image_base64.current.src;
 
       // service_create_skelbimas
@@ -1034,6 +1105,89 @@ const Page_skelbimai_create = function () {
   }, "Kurti skelbima")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_skelbimai_create);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Page_visi_skelbimai.jsx":
+/*!**********************************************************!*\
+  !*** ./src/pages/page_skelbimai/Page_visi_skelbimai.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_service_skelbimai_find_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/service_skelbimai_find.mjs */ "./src/services/service_skelbimai_find.mjs");
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _Card_Skelbimai_card_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Card/Skelbimai_card.jsx */ "./src/pages/page_skelbimai/Card/Skelbimai_card.jsx");
+
+
+
+
+
+const Page_visi_skelbimai = function () {
+  // states 
+
+  const [state_skelbimai, set_state_skelbimai] = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]);
+
+  //
+
+  const fetch_skelbimai = async function () {
+    // service_skelbimai find
+
+    (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)("service_skelbimai_find...");
+    const result_of_service_skelbimai_find = await (0,_services_service_skelbimai_find_mjs__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)(null);
+
+    // error:
+
+    if (result_of_service_skelbimai_find.status === "error") {
+      (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_alert_message)(result_of_service_skelbimai_find.message);
+      return;
+    }
+
+    // success
+
+    set_state_skelbimai(result_of_service_skelbimai_find.skelbimai);
+  };
+  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    fetch_skelbimai();
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "10px",
+      margin: "2rem"
+    }
+  }, function () {
+    const elements = [];
+    for (var i = 0; i < state_skelbimai.length; i++) {
+      // const pavadinimas = state_skelbimai[i].pavadinimas
+      // const kategorija = state_skelbimai[i].kategorija
+      // const aprasas = state_skelbimai[i].aprasas
+      // const kaina = state_skelbimai[i].kaina
+      // const image_base64 = state_skelbimai[i].image_base64
+
+      elements.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Card_Skelbimai_card_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        autorius: state_skelbimai[i].autorius,
+        pavadinimas: state_skelbimai[i].pavadinimas,
+        kategorija: state_skelbimai[i].kategorija,
+        aprasas: state_skelbimai[i].aprasas,
+        kaina: state_skelbimai[i].kaina,
+        image_base64: state_skelbimai[i].image_base64
+      }));
+    }
+    return elements;
+  }());
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_visi_skelbimai);
 
 /***/ }),
 
@@ -34853,6 +35007,64 @@ const service_sign_up = async function (
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_sign_up);
+
+/***/ }),
+
+/***/ "./src/services/service_skelbimai_find.mjs":
+/*!*************************************************!*\
+  !*** ./src/services/service_skelbimai_find.mjs ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const service_skelbimai_find = async function (
+    )
+{
+    // method
+
+    const method = "GET"
+
+    // uri
+
+    const uri = "/api/skelbimai/"
+
+    const result_of_fetch = await fetch(
+        uri,
+        {
+            method: method
+        }
+    )
+
+    // error: unvalid status code
+
+    if (result_of_fetch.status !== 200 &&
+        result_of_fetch.status !== 400)
+    {
+        return { status: "error", message: "invalid status code" }
+    }
+
+    // error:
+
+    if (result_of_fetch.status === 400)
+    {
+        const body = await result_of_fetch.json()
+
+        const message = body.message
+
+        return { status: "error", message: message }
+    }
+
+    // success
+
+    const body = await result_of_fetch.json()
+
+    return { status: "success", skelbimai: body.skelbimai }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_skelbimai_find);
 
 /***/ }),
 

@@ -3,6 +3,7 @@ import service_sign_in from "../services/service_sign_in.mjs"
 import { set_state_overlay_message } from "../Overlay.jsx"
 import { set_state_alert_message } from "../Alert.jsx"
 import { set_state_username } from "../Header.jsx"
+import { set_state_page } from "../Page.jsx"
 
 const Page_sign_in = function ()
 {
@@ -83,6 +84,8 @@ const Page_sign_in = function ()
                         // success
 
                         set_state_username(username)
+
+                        set_state_page("Page_visi_skelbimai")
                     }
                 }
             >Sing-in</button>

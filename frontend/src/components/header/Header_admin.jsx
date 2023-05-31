@@ -28,6 +28,16 @@ const Header_admin = function ()
             {
                 function ()
                 {
+                    set_state_page("Page_visi_skelbimai")
+                }
+            }
+        >Visi skelbimai</button>
+
+        <button
+            onClick=
+            {
+                function ()
+                {
                     set_state_page("Page_kategorijos")
                 }
             }
@@ -64,7 +74,7 @@ const Header_admin = function ()
                     set_state_page("Page_sign_in")
                 }
             }
-        >Sing-out</button>
+        >Sign-out</button>
     </header>
 }
 

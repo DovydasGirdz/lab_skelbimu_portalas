@@ -4,6 +4,9 @@ import { set_state_alert_message } from "../../Alert.jsx"
 import service_sign_out from "../../services/service_sign_out.mjs"
 import { set_state_page } from "../../Page.jsx"
 import { set_state_username, state_username } from "../../Header.jsx"
+import service_skelbimai_find from "../../services/service_skelbimai_find.mjs"
+import { set_state_skelbimai } from "../../pages/page_skelbimai/Page_visi_skelbimai.jsx"
+
 
 const Header_user = function ()
 {
@@ -22,6 +25,16 @@ const Header_user = function ()
         }
     >
         <span>{state_username}</span>
+
+        <button
+            onClick=
+            {
+                function ()
+                {
+                    set_state_page("Page_visi_skelbimai")
+                }
+            }
+        >Visi skelbimai</button>
 
         <button
             onClick=
@@ -64,7 +77,7 @@ const Header_user = function ()
                     set_state_page("Page_sign_in")
                 }
             }
-        >Sing-out</button>
+        >Sign-out</button>
 
     </header>
 }

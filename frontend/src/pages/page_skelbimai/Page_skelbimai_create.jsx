@@ -81,7 +81,7 @@ const Page_skelbimai_create = function ()
                         const pavadinimas = ref_input_pavadinimas.current.value
                         const kategorija = ref_kategorija.current
                         const aprasas = ref_input_aprasas.current.value
-                        const kaina = ref_input_kaina.current.value
+                        const kaina = Number(ref_input_kaina.current.value)
                         const image_base64 = ref_image_base64.current.src
 
                         // service_create_skelbimas
