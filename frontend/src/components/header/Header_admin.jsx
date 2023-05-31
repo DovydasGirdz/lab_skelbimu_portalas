@@ -1,9 +1,9 @@
 import React from "react"
 import { set_state_alert_message } from "../../Alert.jsx"
-import { set_state_page } from "../../App.jsx"
+import { set_state_username } from "../../Header.jsx"
 import { set_state_overlay_message } from "../../Overlay.jsx"
+import { set_state_page } from "../../Page.jsx"
 import service_sign_out from "../../services/service_sign_out.mjs"
-import { set_state_username } from "./Header.jsx"
 
 const Header_admin = function ()
 {
@@ -14,7 +14,7 @@ const Header_admin = function ()
         {
             {
                 width: "100%",
-                height: "6.5em",
+                minHeight: "6.5em",
                 lineHeight: "6.5em",
                 textAlign: "right",
                 backgroundColor: "rgb(240, 240, 240)"
@@ -42,26 +42,29 @@ const Header_admin = function ()
 
                     set_state_overlay_message("service_sign_out...")
 
-                    const result_of_service_sign_out = await service_sign_out()
+                    const result_of_service_sign_out =
+                        await service_sign_out()
 
                     set_state_overlay_message(null)
 
-                    // error: 
+                    // error:
 
                     if (result_of_service_sign_out.status === "error")
                     {
-                        set_state_alert_message(result_of_service_sign_out.message)
+                        set_state_alert_message(
+                            result_of_service_sign_out.message
+                        )
                         return
                     }
 
-                    // success:
+                    // success
 
                     set_state_username(null)
+
                     set_state_page("Page_sign_in")
                 }
             }
         >Sing-out</button>
-
     </header>
 }
 

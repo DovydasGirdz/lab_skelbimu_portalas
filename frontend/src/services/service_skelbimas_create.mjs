@@ -1,5 +1,9 @@
-const service_kategorijos_create = async function (
-    param_pavadinimas
+const service_skelbimas_create = async function (
+    param_pavadinimas,
+    param_kategorija,
+    param_aprasas,
+    param_kaina,
+    param_image_base64
 )
 {
     // method
@@ -8,7 +12,7 @@ const service_kategorijos_create = async function (
 
     // uri
 
-    const uri = "/api/kategorijos/"
+    const uri = "/api/skelbimai/"
 
     // headers
 
@@ -21,7 +25,11 @@ const service_kategorijos_create = async function (
 
     const body =
     {
-        pavadinimas: param_pavadinimas
+        pavadinimas: param_pavadinimas,
+        kategorija: param_kategorija,
+        aprasas: param_aprasas,
+        kaina: param_kaina,
+        image_base64: param_image_base64
     }
 
     const result_of_fetch = await fetch(
@@ -57,4 +65,4 @@ const service_kategorijos_create = async function (
     return { status: "success" }
 }
 
-export default service_kategorijos_create
+export default service_skelbimas_create

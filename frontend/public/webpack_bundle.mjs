@@ -66,44 +66,58 @@ const Alert = function () {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   set_state_page: () => (/* binding */ set_state_page)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Overlay.jsx */ "./src/Overlay.jsx");
 /* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Page_sign_up.jsx */ "./src/pages/Page_sign_up.jsx");
-/* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
-/* harmony import */ var _pages_Page_kategorijos_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Page_kategorijos.jsx */ "./src/pages/Page_kategorijos.jsx");
+/* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Page.jsx */ "./src/Page.jsx");
+/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header.jsx */ "./src/Header.jsx");
+/* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
 
 
 
 
 
 
-var state_page;
-var set_state_page;
 const App = function () {
-  // states
-
-  [state_page, set_state_page] = react__WEBPACK_IMPORTED_MODULE_0___default().useState("Page_sign_in");
-
-  //
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, function () {
-    if (state_page === "Page_sign_in") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-    }
-    if (state_page === "Page_sign_up") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-    }
-    if (state_page === "Page_kategorijos") {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_kategorijos_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-    }
-  }(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Header_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Page_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/Header.jsx":
+/*!************************!*\
+  !*** ./src/Header.jsx ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   set_state_username: () => (/* binding */ set_state_username),
+/* harmony export */   state_username: () => (/* binding */ state_username)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_header_Header_guest_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header/Header_guest.jsx */ "./src/components/header/Header_guest.jsx");
+/* harmony import */ var _components_header_Header_admin_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header/Header_admin.jsx */ "./src/components/header/Header_admin.jsx");
+/* harmony import */ var _components_header_Header_user_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/header/Header_user.jsx */ "./src/components/header/Header_user.jsx");
+
+
+
+
+var state_username;
+var set_state_username;
+const Header = function () {
+  [state_username, set_state_username] = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null);
+  if (state_username === null) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_guest_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+  if (state_username === "admin") return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_admin_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_user_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
 
 /***/ }),
 
@@ -155,43 +169,52 @@ const Overlay = function () {
 
 /***/ }),
 
-/***/ "./src/components/header/Header.jsx":
-/*!******************************************!*\
-  !*** ./src/components/header/Header.jsx ***!
-  \******************************************/
+/***/ "./src/Page.jsx":
+/*!**********************!*\
+  !*** ./src/Page.jsx ***!
+  \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   set_state_username: () => (/* binding */ set_state_username),
-/* harmony export */   state_username: () => (/* binding */ state_username)
+/* harmony export */   set_state_page: () => (/* binding */ set_state_page),
+/* harmony export */   state_page: () => (/* binding */ state_page)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../App.jsx */ "./src/App.jsx");
-/* harmony import */ var _Header_admin_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header_admin.jsx */ "./src/components/header/Header_admin.jsx");
-/* harmony import */ var _Header_guest_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header_guest.jsx */ "./src/components/header/Header_guest.jsx");
-/* harmony import */ var _Header_user_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header_user.jsx */ "./src/components/header/Header_user.jsx");
+/* harmony import */ var _pages_page_kategorijos_Page_kategorijos_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/page_kategorijos/Page_kategorijos.jsx */ "./src/pages/page_kategorijos/Page_kategorijos.jsx");
+/* harmony import */ var _pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Page_sign_in.jsx */ "./src/pages/Page_sign_in.jsx");
+/* harmony import */ var _pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Page_sign_up.jsx */ "./src/pages/Page_sign_up.jsx");
+/* harmony import */ var _pages_page_skelbimai_Page_skelbimai_create_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/page_skelbimai/Page_skelbimai_create.jsx */ "./src/pages/page_skelbimai/Page_skelbimai_create.jsx");
 
 
 
 
 
-var state_username;
-var set_state_username;
-const Header = function () {
+var state_page;
+var set_state_page;
+const Page = function () {
   // states
 
-  [state_username, set_state_username] = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null);
+  [state_page, set_state_page] = react__WEBPACK_IMPORTED_MODULE_0___default().useState("Page_sign_in");
 
   //
 
-  if (state_username === null) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Header_guest_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-  if (state_username === "admin") return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Header_admin_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Header_user_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+  if (state_page === "Page_sign_in") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_in_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+  }
+  if (state_page === "Page_sign_up") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_Page_sign_up_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+  }
+  if (state_page === "Page_kategorijos") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_page_kategorijos_Page_kategorijos_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+  }
+  if (state_page === "Page_skelbimai_create") {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_page_skelbimai_Page_skelbimai_create_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+  }
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
 /***/ }),
 
@@ -208,10 +231,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../App.jsx */ "./src/App.jsx");
+/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Header.jsx */ "./src/Header.jsx");
 /* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
-/* harmony import */ var _services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/service_sign_out.mjs */ "./src/services/service_sign_out.mjs");
-/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.jsx */ "./src/components/header/Header.jsx");
+/* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Page.jsx */ "./src/Page.jsx");
+/* harmony import */ var _services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/service_sign_out.mjs */ "./src/services/service_sign_out.mjs");
 
 
 
@@ -224,34 +247,34 @@ const Header_admin = function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
     style: {
       width: "100%",
-      height: "6.5em",
+      minHeight: "6.5em",
       lineHeight: "6.5em",
       textAlign: "right",
       backgroundColor: "rgb(240, 240, 240)"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "admin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_page)("Page_kategorijos");
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_kategorijos");
     }
   }, "Kategorijos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: async function () {
       // service_sign_out
 
       (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)("service_sign_out...");
-      const result_of_service_sign_out = await (0,_services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_4__["default"])();
+      const result_of_service_sign_out = await (0,_services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_5__["default"])();
       (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)(null);
 
-      // error: 
+      // error:
 
       if (result_of_service_sign_out.status === "error") {
         (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_sign_out.message);
         return;
       }
 
-      // success:
+      // success
 
-      (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_5__.set_state_username)(null);
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_page)("Page_sign_in");
+      (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_username)(null);
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_sign_in");
     }
   }, "Sing-out"));
 };
@@ -271,7 +294,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../App.jsx */ "./src/App.jsx");
+/* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Page.jsx */ "./src/Page.jsx");
 
 
 const Header_guest = function () {
@@ -280,18 +303,18 @@ const Header_guest = function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
     style: {
       width: "100%",
-      height: "6.5em",
+      minHeight: "6.5em",
       lineHeight: "6.5em",
       textAlign: "right",
       backgroundColor: "rgb(240, 240, 240)"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_sign_in");
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_sign_in");
     }
   }, "Sign-in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_sign_up");
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_page)("Page_sign_up");
     }
   }, "Sing-up"));
 };
@@ -311,11 +334,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _App_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../App.jsx */ "./src/App.jsx");
-/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
-/* harmony import */ var _services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/service_sign_out.mjs */ "./src/services/service_sign_out.mjs");
-/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.jsx */ "./src/components/header/Header.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/service_sign_out.mjs */ "./src/services/service_sign_out.mjs");
+/* harmony import */ var _Page_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Page.jsx */ "./src/Page.jsx");
+/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Header.jsx */ "./src/Header.jsx");
 
 
 
@@ -328,109 +351,38 @@ const Header_user = function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
     style: {
       width: "100%",
-      height: "6.5em",
+      minHeight: "6.5em",
       lineHeight: "6.5em",
       textAlign: "right",
       backgroundColor: "rgb(240, 240, 240)"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, _Header_jsx__WEBPACK_IMPORTED_MODULE_5__.state_username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function () {
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_page)("Page_kurti_skelbima");
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_skelbimai_create");
     }
-  }, "Kurti skelbima"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Kurti skelbim\u0105"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: async function () {
       // service_sign_out
 
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)("service_sign_out...");
-      const result_of_service_sign_out = await (0,_services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_4__["default"])();
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)(null);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_overlay_message)("service_sign_out...");
+      const result_of_service_sign_out = await (0,_services_service_sign_out_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])();
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_overlay_message)(null);
 
-      // error: 
+      // error:
 
       if (result_of_service_sign_out.status === "error") {
-        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_sign_out.message);
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_alert_message)(result_of_service_sign_out.message);
         return;
       }
 
-      // success:
+      // success
 
       (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_5__.set_state_username)(null);
-      (0,_App_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_page)("Page_sign_in");
+      (0,_Page_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_page)("Page_sign_in");
     }
   }, "Sing-out"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header_user);
-
-/***/ }),
-
-/***/ "./src/pages/Page_kategorijos.jsx":
-/*!****************************************!*\
-  !*** ./src/pages/Page_kategorijos.jsx ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
-/* harmony import */ var _components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/header/Header.jsx */ "./src/components/header/Header.jsx");
-/* harmony import */ var _services_service_kategorijos_create_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/service_kategorijos_create.mjs */ "./src/services/service_kategorijos_create.mjs");
-
-
-
-
-
-const Page_kategorijos = function () {
-  // refs
-
-  const ref_input_pavadinimas = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
-
-  //
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
-    style: {
-      width: "fit-content",
-      padding: "1em",
-      border: "0",
-      margin: "1em auto 0 auto",
-      textAlign: "left",
-      backgroundColor: "rgb(240, 240, 240)"
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Pavadinimas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    ref: ref_input_pavadinimas,
-    type: "text"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    style: {
-      display: "block",
-      margin: "1em 0 0 0"
-    },
-    onClick: async function () {
-      // inputs
-      const pavadinimas = ref_input_pavadinimas.current.value;
-
-      // service_kategorijos_create
-
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_kategorijos_create...");
-      const result_of_service_kategorijos_create = await (0,_services_service_kategorijos_create_mjs__WEBPACK_IMPORTED_MODULE_4__["default"])(pavadinimas);
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
-
-      // error:
-      if (result_of_service_kategorijos_create.status === "error") {
-        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_kategorijos_create.message);
-        return;
-      }
-
-      // success:
-
-      (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)("Success");
-    }
-  }, "Kurti kategorija")));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_kategorijos);
 
 /***/ }),
 
@@ -446,10 +398,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header/Header.jsx */ "./src/components/header/Header.jsx");
-/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
-/* harmony import */ var _services_service_sign_in_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/service_sign_in.mjs */ "./src/services/service_sign_in.mjs");
+/* harmony import */ var _services_service_sign_in_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/service_sign_in.mjs */ "./src/services/service_sign_in.mjs");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Header.jsx */ "./src/Header.jsx");
 
 
 
@@ -463,7 +415,7 @@ const Page_sign_in = function () {
 
   //
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
     style: {
       width: "fit-content",
       padding: "1em",
@@ -485,24 +437,26 @@ const Page_sign_in = function () {
     },
     onClick: async function () {
       // inputs
+
       const username = ref_input_username.current.value;
       const password = ref_input_password.current.value;
 
       // service_sign_in
 
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)("service_sign_in...");
-      const result_of_service_sign_in = await (0,_services_service_sign_in_mjs__WEBPACK_IMPORTED_MODULE_4__["default"])(username, password);
-      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)(null);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_sign_in...");
+      const result_of_service_sign_in = await (0,_services_service_sign_in_mjs__WEBPACK_IMPORTED_MODULE_1__["default"])(username, password);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
 
       // error:
+
       if (result_of_service_sign_in.status === "error") {
-        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_sign_in.message);
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_alert_message)(result_of_service_sign_in.message);
         return;
       }
 
-      // success:
+      // success
 
-      (0,_components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_username)(username);
+      (0,_Header_jsx__WEBPACK_IMPORTED_MODULE_4__.set_state_username)(username);
     }
   }, "Sing-in")));
 };
@@ -525,13 +479,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_service_sign_up_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/service_sign_up.mjs */ "./src/services/service_sign_up.mjs");
 /* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Overlay.jsx */ "./src/Overlay.jsx");
 /* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Alert.jsx */ "./src/Alert.jsx");
-/* harmony import */ var _components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/header/Header.jsx */ "./src/components/header/Header.jsx");
 
 
 
 
-
-const Page_sign_up = function (props) {
+const Page_sign_up = function () {
   // refs
 
   const ref_input_username = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
@@ -539,7 +491,7 @@ const Page_sign_up = function (props) {
 
   //
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_Header_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
     style: {
       width: "fit-content",
       padding: "1em",
@@ -585,6 +537,503 @@ const Page_sign_up = function (props) {
   }, "Sign-up")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_sign_up);
+
+/***/ }),
+
+/***/ "./src/pages/page_kategorijos/Create.jsx":
+/*!***********************************************!*\
+  !*** ./src/pages/page_kategorijos/Create.jsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _services_service_kategorijos_create_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/service_kategorijos_create.mjs */ "./src/services/service_kategorijos_create.mjs");
+/* harmony import */ var _List_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./List.jsx */ "./src/pages/page_kategorijos/List.jsx");
+
+
+
+
+
+const Create = function (props) {
+  // refs
+
+  const ref_input_pavadinimas = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+
+  //
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      minWidth: "20em",
+      width: "fit-content",
+      padding: "1em",
+      border: "0",
+      margin: "1em auto 0 auto",
+      textAlign: "left",
+      backgroundColor: "rgb(240, 240, 240)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Pavadinimas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    ref: ref_input_pavadinimas,
+    type: "text"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    style: {
+      display: "block",
+      margin: "1em 0 0 0"
+    },
+    onClick: async function () {
+      // inputs
+
+      const pavadinimas = ref_input_pavadinimas.current.value;
+
+      // service_kategorijos_create
+
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_kategorijos_create...");
+      const result_of_service_kategorijos_create = await (0,_services_service_kategorijos_create_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])(pavadinimas);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
+
+      // error:
+
+      if (result_of_service_kategorijos_create.status === "error") {
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_kategorijos_create.message);
+        return;
+      }
+
+      // success
+
+      (0,_List_jsx__WEBPACK_IMPORTED_MODULE_4__.update)();
+    }
+  }, "Create"));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
+
+/***/ }),
+
+/***/ "./src/pages/page_kategorijos/Line.jsx":
+/*!*********************************************!*\
+  !*** ./src/pages/page_kategorijos/Line.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _services_service_kategorijos_delete_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/service_kategorijos_delete.mjs */ "./src/services/service_kategorijos_delete.mjs");
+/* harmony import */ var _List_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./List.jsx */ "./src/pages/page_kategorijos/List.jsx");
+
+
+
+
+
+const List_line = function (props) {
+  // props
+
+  const _id = props._id;
+  const pavadinimas = props.pavadinimas;
+
+  //
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      width: "fit-content",
+      padding: "0.25em",
+      border: "0",
+      margin: "0.25em",
+      textAlign: "left",
+      backgroundColor: "rgb(230, 230, 230)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, pavadinimas), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: async function () {
+      // service_kategorijos_delete
+
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_kategorijos_delete...");
+      const result_of_service_kategorijos_delete = await (0,_services_service_kategorijos_delete_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])(_id);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
+
+      // error
+
+      if (result_of_service_kategorijos_delete.status === "error") {
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_kategorijos_delete.message);
+        return;
+      }
+
+      // success
+
+      (0,_List_jsx__WEBPACK_IMPORTED_MODULE_4__.update)();
+    }
+  }, "Delete"));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (List_line);
+
+/***/ }),
+
+/***/ "./src/pages/page_kategorijos/List.jsx":
+/*!*********************************************!*\
+  !*** ./src/pages/page_kategorijos/List.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   update: () => (/* binding */ update)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _services_service_kategorijos_find_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/service_kategorijos_find.mjs */ "./src/services/service_kategorijos_find.mjs");
+/* harmony import */ var _Line_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Line.jsx */ "./src/pages/page_kategorijos/Line.jsx");
+
+
+
+
+
+var update;
+const List = function (props) {
+  // states
+
+  const [state_kategorijos, set_state_kategorijos] = react__WEBPACK_IMPORTED_MODULE_0___default().useState();
+
+  //
+
+  update = async function () {
+    // service_kategorijos_find
+
+    (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_kategorijos_find...");
+    const result_of_service_kategorijos_find = await (0,_services_service_kategorijos_find_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
+
+    // error:
+
+    if (result_of_service_kategorijos_find.status === "error") {
+      (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_kategorijos_find.message);
+      return;
+    }
+
+    // success
+
+    const kategorijos = result_of_service_kategorijos_find.kategorijos;
+    set_state_kategorijos(kategorijos);
+  };
+
+  // effects 
+
+  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    update();
+  }, {});
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      minWidth: "20em",
+      width: "fit-content",
+      padding: "1em",
+      border: "0",
+      margin: "1em auto 0 auto",
+      textAlign: "left",
+      backgroundColor: "rgb(240, 240, 240)"
+    }
+  }, function () {
+    const elements = [];
+    for (var i = 0; i < state_kategorijos.length; i++) {
+      const kategorija = state_kategorijos[i];
+      elements.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Line_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        key: i,
+        _id: kategorija._id,
+        pavadinimas: kategorija.pavadinimas
+      }));
+    }
+    return elements;
+  }());
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (List);
+
+/***/ }),
+
+/***/ "./src/pages/page_kategorijos/Page_kategorijos.jsx":
+/*!*********************************************************!*\
+  !*** ./src/pages/page_kategorijos/Page_kategorijos.jsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Create_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.jsx */ "./src/pages/page_kategorijos/Create.jsx");
+/* harmony import */ var _List_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./List.jsx */ "./src/pages/page_kategorijos/List.jsx");
+
+
+
+const Page_kategorijos = function () {
+  //
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Create_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_List_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_kategorijos);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Kategorijos/Image_base64.jsx":
+/*!***************************************************************!*\
+  !*** ./src/pages/page_skelbimai/Kategorijos/Image_base64.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _New_folder_app_testas_new_main_app_testas_new_main_frontend_src_utils_encode_image_to_base64_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../New folder/app_testas_new-main/app_testas_new-main/frontend/src/utils/encode_image_to_base64.mjs */ "../../New folder/app_testas_new-main/app_testas_new-main/frontend/src/utils/encode_image_to_base64.mjs");
+
+
+const Image_base64 = function (props) {
+  // props
+
+  const ref_img = props.ref_image_base64;
+
+  // refs
+
+  const ref_input_file = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+
+  //
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      width: "fit-content",
+      padding: "0.25em",
+      border: "0",
+      margin: "0.25em 0 0.25em 0",
+      backgroundColor: "rgb(230, 230, 230)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Nuotrauka: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    ref: ref_img,
+    style: {
+      maxWidth: "10em"
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    style: {
+      display: "block"
+    },
+    ref: ref_input_file,
+    type: "file",
+    onChange: async function () {
+      // inputs
+
+      const file = ref_input_file.current.files[0];
+
+      // encode_image_to_base64
+
+      const result_of_encode_image_to_base64 = await (0,_New_folder_app_testas_new_main_app_testas_new_main_frontend_src_utils_encode_image_to_base64_mjs__WEBPACK_IMPORTED_MODULE_1__["default"])(file);
+
+      // error
+
+      if (result_of_encode_image_to_base64.status === "error") {
+        return;
+      }
+      const image_base64 = result_of_encode_image_to_base64.file;
+
+      // success
+
+      ref_img.current.src = image_base64;
+    }
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Image_base64);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Kategorijos/Kategorijos.jsx":
+/*!**************************************************************!*\
+  !*** ./src/pages/page_skelbimai/Kategorijos/Kategorijos.jsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _services_service_kategorijos_find_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/service_kategorijos_find.mjs */ "./src/services/service_kategorijos_find.mjs");
+/* harmony import */ var _Kategorijos_list_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Kategorijos_list.jsx */ "./src/pages/page_skelbimai/Kategorijos/Kategorijos_list.jsx");
+
+
+
+
+
+const Kategorijos = function (props) {
+  // states
+
+  const [state_kategorijos, set_state_kategorijos] = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]);
+
+  // refs
+
+  const ref_kategorija = props.ref_kategorija;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Kategorijos:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Kategorijos_list_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    ref_kategorija: ref_kategorija,
+    state_kategorijos: state_kategorijos
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: async function () {
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)("service_kategorijos_find...");
+      const result_of_service_kategorijos_find = await (0,_services_service_kategorijos_find_mjs__WEBPACK_IMPORTED_MODULE_3__["default"])();
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_overlay_message)(null);
+
+      // error:
+      if (result_of_service_kategorijos_find.status === "error") {
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_1__.set_state_alert_message)(result_of_service_kategorijos_find.message);
+        return;
+      }
+      const kategorijos = result_of_service_kategorijos_find.kategorijos;
+      set_state_kategorijos(kategorijos);
+    }
+  }, "Update"));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Kategorijos);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Kategorijos/Kategorijos_list.jsx":
+/*!*******************************************************************!*\
+  !*** ./src/pages/page_skelbimai/Kategorijos/Kategorijos_list.jsx ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const Kategorijos_list = function (props) {
+  // props 
+
+  const state_kategorijos = props.state_kategorijos;
+  const ref_kategorija = props.ref_kategorija;
+
+  // refs
+
+  const components = [""];
+  for (var i = 0; i < state_kategorijos.length; i++) {
+    const kategorija = state_kategorijos[i];
+    components.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, kategorija.pavadinimas), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      onClick: function () {
+        ref_kategorija.current = kategorija.pavadinimas;
+      }
+    }, "Select")));
+  }
+  return components;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Kategorijos_list);
+
+/***/ }),
+
+/***/ "./src/pages/page_skelbimai/Page_skelbimai_create.jsx":
+/*!************************************************************!*\
+  !*** ./src/pages/page_skelbimai/Page_skelbimai_create.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_service_skelbimas_create_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/service_skelbimas_create.mjs */ "./src/services/service_skelbimas_create.mjs");
+/* harmony import */ var _Alert_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Alert.jsx */ "./src/Alert.jsx");
+/* harmony import */ var _Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Overlay.jsx */ "./src/Overlay.jsx");
+/* harmony import */ var _Kategorijos_Kategorijos_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Kategorijos/Kategorijos.jsx */ "./src/pages/page_skelbimai/Kategorijos/Kategorijos.jsx");
+/* harmony import */ var _Kategorijos_Image_base64_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Kategorijos/Image_base64.jsx */ "./src/pages/page_skelbimai/Kategorijos/Image_base64.jsx");
+
+
+
+
+
+
+const Page_skelbimai_create = function () {
+  // refs
+
+  const ref_input_pavadinimas = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+  const ref_kategorija = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+  const ref_input_aprasas = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+  const ref_input_kaina = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+  const ref_image_base64 = react__WEBPACK_IMPORTED_MODULE_0___default().useRef();
+
+  //
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
+    style: {
+      width: "fit-content",
+      padding: "1em",
+      border: "0",
+      margin: "1em auto 0 auto",
+      textAlign: "left",
+      backgroundColor: "rgb(240, 240, 240)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Pavadinimas: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    ref: ref_input_pavadinimas,
+    type: "text"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Kategorijos_Kategorijos_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    ref_kategorija: ref_kategorija
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Aprasas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    ref: ref_input_aprasas,
+    type: "textarea"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Kaina:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    ref: ref_input_kaina,
+    type: "number"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Kategorijos_Image_base64_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    ref_image_base64: ref_image_base64
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    style: {
+      display: "block",
+      margin: "1em 0 0 0"
+    },
+    onClick: async function () {
+      // inputs
+
+      const pavadinimas = ref_input_pavadinimas.current.value;
+      const kategorija = ref_kategorija.current;
+      const aprasas = ref_input_aprasas.current.value;
+      const kaina = ref_input_kaina.current.value;
+      const image_base64 = ref_image_base64.current.src;
+
+      // service_create_skelbimas
+
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)("service_create_skelbimas...");
+      const result_of_service_skelbimas_create = await (0,_services_service_skelbimas_create_mjs__WEBPACK_IMPORTED_MODULE_1__["default"])(pavadinimas, kategorija, aprasas, kaina, image_base64);
+      (0,_Overlay_jsx__WEBPACK_IMPORTED_MODULE_3__.set_state_overlay_message)(null);
+
+      // error:
+
+      if (result_of_service_skelbimas_create.status === "error") {
+        (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_alert_message)(result_of_service_skelbimas_create.message);
+        return;
+      }
+
+      // success
+
+      (0,_Alert_jsx__WEBPACK_IMPORTED_MODULE_2__.set_state_alert_message)("Skelbimas sukurtas");
+    }
+  }, "Kurti skelbima")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page_skelbimai_create);
 
 /***/ }),
 
@@ -33960,6 +34409,48 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "../../New folder/app_testas_new-main/app_testas_new-main/frontend/src/utils/encode_image_to_base64.mjs":
+/*!**************************************************************************************************************!*\
+  !*** ../../New folder/app_testas_new-main/app_testas_new-main/frontend/src/utils/encode_image_to_base64.mjs ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const encode_image_to_base64 = function (param_file)
+{
+    return new Promise(
+        function (resolve, reject)
+        {
+            const file_reander = new FileReader()
+
+            // onerror
+
+            file_reander.onerror = function ()
+            {
+                reject({ status: "error" })
+            }
+
+            // onload
+
+            file_reander.onload = function ()
+            {
+                resolve({ status: "success", file: file_reander.result })
+            }
+
+            //
+
+            file_reander.readAsDataURL(param_file)
+        }
+    )
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (encode_image_to_base64);
+
+/***/ }),
+
 /***/ "./src/services/service_kategorijos_create.mjs":
 /*!*****************************************************!*\
   !*** ./src/services/service_kategorijos_create.mjs ***!
@@ -33970,7 +34461,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const service_kategorijos_create = async function (param_pavadinimas)
+const service_kategorijos_create = async function (
+    param_pavadinimas
+)
 {
     // method
 
@@ -34028,6 +34521,129 @@ const service_kategorijos_create = async function (param_pavadinimas)
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_kategorijos_create);
+
+/***/ }),
+
+/***/ "./src/services/service_kategorijos_delete.mjs":
+/*!*****************************************************!*\
+  !*** ./src/services/service_kategorijos_delete.mjs ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const service_kategorijos_delete = async function (
+    param_id
+)
+{
+    // method
+
+    const method = "DELETE"
+
+    // uri
+
+    const uri = `/api/kategorijos/${param_id}/`
+
+    // headers
+
+    // body
+
+    const result_of_fetch = await fetch(
+        uri,
+        {
+            method: method
+        }
+    )
+
+    // error: unvalid status code
+
+    if (result_of_fetch.status !== 200 &&
+        result_of_fetch.status !== 400)
+    {
+        return { status: "error", message: "invalid status code" }
+    }
+
+    // error:
+
+    if (result_of_fetch.status === 400)
+    {
+        const body = await result_of_fetch.json()
+
+        const message = body.message
+
+        return { status: "error", message: message }
+    }
+
+    // success
+
+    return { status: "success"}
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_kategorijos_delete);
+
+/***/ }),
+
+/***/ "./src/services/service_kategorijos_find.mjs":
+/*!***************************************************!*\
+  !*** ./src/services/service_kategorijos_find.mjs ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const service_kategorijos_find = async function (
+    )
+{
+    // method
+
+    const method = "GET"
+
+    // uri
+
+    const uri = "/api/kategorijos/"
+
+    // headers
+
+    // body
+
+    const result_of_fetch = await fetch(
+        uri,
+        {
+            method: method
+        }
+    )
+
+    // error: unvalid status code
+
+    if (result_of_fetch.status !== 200 &&
+        result_of_fetch.status !== 400)
+    {
+        return { status: "error", message: "invalid status code" }
+    }
+
+    // error:
+
+    if (result_of_fetch.status === 400)
+    {
+        const body = await result_of_fetch.json()
+
+        const message = body.message
+
+        return { status: "error", message: message }
+    }
+
+    // success
+
+    const body = await result_of_fetch.json()
+
+    return { status: "success", kategorijos: body.kategorijos }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_kategorijos_find);
 
 /***/ }),
 
@@ -34126,6 +34742,9 @@ const service_sign_out = async function ()
 
     const uri = "/api/sign_out"
 
+    // headers
+
+    // body
 
     const result_of_fetch = await fetch(
         uri,
@@ -34234,6 +34853,87 @@ const service_sign_up = async function (
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_sign_up);
+
+/***/ }),
+
+/***/ "./src/services/service_skelbimas_create.mjs":
+/*!***************************************************!*\
+  !*** ./src/services/service_skelbimas_create.mjs ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const service_skelbimas_create = async function (
+    param_pavadinimas,
+    param_kategorija,
+    param_aprasas,
+    param_kaina,
+    param_image_base64
+)
+{
+    // method
+
+    const method = "POST"
+
+    // uri
+
+    const uri = "/api/skelbimai/"
+
+    // headers
+
+    const headers =
+    {
+        "Content-Type": "application/json"
+    }
+
+    // body
+
+    const body =
+    {
+        pavadinimas: param_pavadinimas,
+        kategorija: param_kategorija,
+        aprasas: param_aprasas,
+        kaina: param_kaina,
+        image_base64: param_image_base64
+    }
+
+    const result_of_fetch = await fetch(
+        uri,
+        {
+            method: method,
+            headers: headers,
+            body: JSON.stringify(body)
+        }
+    )
+
+    // error: unvalid status code
+
+    if (result_of_fetch.status !== 200 &&
+        result_of_fetch.status !== 400)
+    {
+        return { status: "error", message: "invalid status code" }
+    }
+
+    // error:
+
+    if (result_of_fetch.status === 400)
+    {
+        const body = await result_of_fetch.json()
+
+        const message = body.message
+
+        return { status: "error", message: message }
+    }
+
+    // success
+
+    return { status: "success" }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (service_skelbimas_create);
 
 /***/ })
 

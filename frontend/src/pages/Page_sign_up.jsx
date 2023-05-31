@@ -2,9 +2,8 @@ import React from "react"
 import service_sign_up from "../services/service_sign_up.mjs"
 import { set_state_overlay_message } from "../Overlay.jsx"
 import { set_state_alert_message } from "../Alert.jsx"
-import Header from "../components/header/Header.jsx"
 
-const Page_sign_up = function (props)
+const Page_sign_up = function ()
 {
     // refs
 
@@ -15,10 +14,7 @@ const Page_sign_up = function (props)
     //
 
     return <>
-
-        <Header
-        ></Header>
-
+    
         <main
             style=
             {

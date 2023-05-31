@@ -1,5 +1,5 @@
 import React from "react"
-import { set_state_page } from "../../App.jsx"
+import { set_state_page } from "../../Page.jsx"
 
 const Header_guest = function ()
 {
@@ -10,7 +10,7 @@ const Header_guest = function ()
         {
             {
                 width: "100%",
-                height: "6.5em",
+                minHeight: "6.5em",
                 lineHeight: "6.5em",
                 textAlign: "right",
                 backgroundColor: "rgb(240, 240, 240)"

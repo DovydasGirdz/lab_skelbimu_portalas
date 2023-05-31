@@ -4,14 +4,10 @@ import Header_admin from "./Header_admin.jsx"
 import Header_guest from "./Header_guest.jsx"
 import Header_user from "./Header_user.jsx"
 
-export var state_username 
-export var set_state_username
-
 const Header = function ()
 {
     // states
 
-    [state_username, set_state_username] = React.useState(null)
 
     //
     

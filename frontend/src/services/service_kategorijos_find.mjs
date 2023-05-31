@@ -1,4 +1,5 @@
-const service_sign_out = async function ()
+const service_kategorijos_find = async function (
+    )
 {
     // method
 
@@ -6,7 +7,7 @@ const service_sign_out = async function ()
 
     // uri
 
-    const uri = "/api/sign_out"
+    const uri = "/api/kategorijos/"
 
     // headers
 
@@ -40,7 +41,9 @@ const service_sign_out = async function ()
 
     // success
 
-    return { status: "success" }
+    const body = await result_of_fetch.json()
+
+    return { status: "success", kategorijos: body.kategorijos }
 }
 
-export default service_sign_out
+export default service_kategorijos_find

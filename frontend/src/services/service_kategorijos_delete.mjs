@@ -1,12 +1,14 @@
-const service_sign_out = async function ()
+const service_kategorijos_delete = async function (
+    param_id
+)
 {
     // method
 
-    const method = "GET"
+    const method = "DELETE"
 
     // uri
 
-    const uri = "/api/sign_out"
+    const uri = `/api/kategorijos/${param_id}/`
 
     // headers
 
@@ -40,7 +42,7 @@ const service_sign_out = async function ()
 
     // success
 
-    return { status: "success" }
+    return { status: "success"}
 }
 
-export default service_sign_out
+export default service_kategorijos_delete
