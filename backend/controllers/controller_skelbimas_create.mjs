@@ -1,6 +1,7 @@
 import config_skelbimai from "../config/config_skelbimai.mjs"
 import config_users from "../config/config_users.mjs"
 import model_kategorijos_create from "../models/model_kategorijos_create.mjs"
+import model_skelbimas_create from "../models/model_skelbimas_create.mjs"
 import model_users_read from "../models/model_users_read.mjs"
 
 const controller_skelbimas_create = async function (req, res)
@@ -36,9 +37,9 @@ const controller_skelbimas_create = async function (req, res)
 
         const autorius = result_of_resolve_username
 
-        // model_kategorijos_create
+        // model_skelbimas_create
 
-        await model_kategorijos_create(
+        await model_skelbimas_create(
             autorius,
             pavadinimas,
             kategorija,

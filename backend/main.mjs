@@ -7,6 +7,7 @@ import controller_kategorijos_create from "./controllers/controller_kategorijos_
 import controller_kategorijos_find from "./controllers/controller_kategorijos_find.mjs"
 import controller_kategorijos_delete from "./controllers/controller_kategorijos_delete.mjs"
 import controller_skelbimas_create from "./controllers/controller_skelbimas_create.mjs"
+import controller_skelbimai_find from "./controllers/controller_skelbimai_find.mjs"
 
 const express_1 = express()
 
@@ -32,6 +33,7 @@ express_1.get("/api/kategorijos/", controller_kategorijos_find)
 express_1.delete("/api/kategorijos/:_id/", controller_kategorijos_delete)
 
 express_1.post("/api/skelbimai/", controller_skelbimas_create)
+express_1.get("/api/skelbimai/", controller_skelbimai_find)
 
 // listen
 

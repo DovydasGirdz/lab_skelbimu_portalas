@@ -16,7 +16,7 @@ export default
         {
             if (param_kategorija === undefined) throw new Error("param_kategorija undefined")
             if (typeof param_kategorija !== "string") throw new Error("param_kategorija is not a string")
-            if (param_kategorija.length < 8) throw new Error("param_kategorija too short")
+            if (param_kategorija.length < 5) throw new Error("param_kategorija too short")
             if (param_kategorija.length > 64) throw new Error("param_kategorija too long")
         },
         validate_aprasas: function (param_aprasas)
