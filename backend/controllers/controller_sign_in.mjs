@@ -17,15 +17,16 @@ const controller_sign_in = async function (req, res)
 
         validate_inputs(username, password)
 
-        // compute_password_hash
+        // compute_passwords_hash
 
-        const passwords_hash = compute_passwords_hash(password)
+        const passwords_hash =
+            compute_passwords_hash(password)
 
         // verify_that_password_correct
 
         await verify_that_password_correct(username, passwords_hash)
 
-        // generate_and_update_users_identification_token
+        // identification_token
 
         const identification_token = generate_random_string(512)
 
@@ -42,10 +43,10 @@ const controller_sign_in = async function (req, res)
 
         // success
 
-        res.cookie("identification_token", identification_token, {httpOnly: true, SameSite: "Strict" })
+        res.cookie("identification_token", identification_token, { httpOnly: true, SameSite: "Strict" })
+
         res.statusCode = 200
         res.end()
-
     }
     catch (error)
     {
@@ -73,7 +74,7 @@ const validate_inputs = function (
 }
 
 //
-// verify_that_password_correct
+// compute_passwords_hash
 //
 
 const compute_passwords_hash = function (param_password)
@@ -86,15 +87,32 @@ const compute_passwords_hash = function (param_password)
     return rersult_of_hash_sha256_base64
 }
 
-const verify_that_password_correct = async function (param_username, param_password)
+//
+// verify_that_password_correct
+//
+
+const verify_that_password_correct = async function (
+    param_username,
+    param_password
+)
 {
-    const result_of_model_users_read = await model_users_read({username: param_username}, { _id: 0, password: 1 })
+    const result_of_model_users_read =
+        await model_users_read(
+            {
+                username: param_username
+            }
+            ,
+            {
+                _id: 0,
+                password: 1
+            }
+        )
 
     // error: password incorrect
 
     if (result_of_model_users_read.password !== param_password)
     {
-        throw new Error("Password incorrect")
+        throw new Error("password incorrect")
     }
 }
 

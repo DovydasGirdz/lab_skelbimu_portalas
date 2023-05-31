@@ -5,13 +5,13 @@ const model_users_update = async function (
     param_document
 )
 {
-    // query 
+    // query
 
     const query = param_query
 
     // document
 
-    const document = 
+    const document =
     {
         "$set": param_document
     }
@@ -24,7 +24,7 @@ const model_users_update = async function (
 
     // error: does not exist
 
-    if (result_of_updateOne.matchedCount === 0) throw new Error ("does not exist")
+    if (result_of_updateOne.matchedCount === 0) throw new Error("does not exist")
 }
 
 export default model_users_update

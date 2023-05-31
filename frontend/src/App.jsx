@@ -3,6 +3,7 @@ import Overlay from "./Overlay.jsx"
 import Alert from "./Alert.jsx"
 import Page_sign_up from "./pages/Page_sign_up.jsx"
 import Page_sign_in from "./pages/Page_sign_in.jsx"
+import Page_kategorijos from "./pages/Page_kategorijos.jsx"
 
 var state_page
 export var set_state_page
@@ -28,6 +29,11 @@ const App = function ()
                 {
                     return <Page_sign_up
                     ></Page_sign_up>
+                }
+                if (state_page === "Page_kategorijos")
+                {
+                    return <Page_kategorijos
+                    ></Page_kategorijos>
                 }
             }()
         }

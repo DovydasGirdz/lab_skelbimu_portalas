@@ -1,43 +1,49 @@
+import config_kategorijos from "../config/config_kategorijos.mjs"
 import config_users from "../config/config_users.mjs"
+import model_kategorijos_delete from "../models/model_kategorijos_delete.mjs"
 import model_users_read from "../models/model_users_read.mjs"
-import model_users_update from "../models/model_users_update.mjs"
 
-const controller_sign_out = async function (req, res)
+const controller_kategorijos_delete = async function (req, res)
 {
     // inputs
 
     const identification_token = req.cookies.identification_token
 
+    const _id = req.params._id
+
     try
     {
         // validate_inputs
 
-        validate_inputs(identification_token)
+        validate_inputs(
+            identification_token,
+            _id
+        )
 
         // resolve_username
 
         const result_of_resolve_username =
-            await resolve_username(identification_token)
+            await resolve_username(
+                identification_token
+            )
 
         const username = result_of_resolve_username
 
-        // model_users_update
+        // error: permission denied
 
-        await model_users_update(
-            {
-                username: username
-            },
-            {
-                identification_token: null
-            }
+        if (username !== "admin") throw new Error("permission denied")
+
+        // model_kategorijos_delete
+
+        await model_kategorijos_delete(
+            _id
         )
 
         // success
 
-        res.cookie("identification_token", null, { maxAge: 0 })
-
         res.statusCode = 200
         res.end()
+
     }
     catch (error)
     {
@@ -51,12 +57,17 @@ const controller_sign_out = async function (req, res)
 //
 
 const validate_inputs = function (
-    param_identification_token
+    param_identification_token,
+    param_id
 )
 {
     // param_identification_token
 
     config_users.validate_identification_token(param_identification_token)
+
+    // param_id
+
+    config_kategorijos.validate_id(param_id)
 }
 
 //
@@ -81,4 +92,4 @@ const resolve_username = async function (param_identification_token)
     return username
 }
 
-export default controller_sign_out
+export default controller_kategorijos_delete

@@ -75,7 +75,9 @@ const validate_inputs = function (
 const verify_that_username_is_avalable = async function (param_username)
 {
     const result_of_model_users_count = await model_users_count(
-        param_username,
+        {
+            username: param_username
+        },
         1
     )
 

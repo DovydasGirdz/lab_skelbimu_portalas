@@ -15,7 +15,7 @@ const model_users_create = async function (
         patikusiu_skelbimu_sarasas: []
     }
 
-    // createOne
+    // insertOne
 
     const result_of_createOne =
         await config_users.mongodb_client

@@ -1,16 +1,14 @@
 import React from "react"
 import { set_state_alert_message } from "../Alert.jsx"
-import Header, { set_state_username } from "../components/header/Header.jsx"
 import { set_state_overlay_message } from "../Overlay.jsx"
-import service_sign_in from "../services/service_sign_in.mjs"
+import Header from "../components/header/Header.jsx"
+import service_kategorijos_create from "../services/service_kategorijos_create.mjs"
 
-const Page_sign_in = function ()
+const Page_kategorijos = function ()
 {
     // refs
 
-    const ref_input_username = React.useRef()
-
-    const ref_input_password = React.useRef()
+    const ref_input_pavadinimas = React.useRef()
 
     //
 
@@ -32,18 +30,11 @@ const Page_sign_in = function ()
                 }
             }
         >
-            <div>Username:</div>
+            <div>Pavadinimas:</div>
 
             <input
-                ref={ref_input_username}
+                ref={ref_input_pavadinimas}
                 type="text"
-            ></input>
-
-            <div>Password:</div>
-
-            <input
-                ref={ref_input_password}
-                type="password"
             ></input>
 
             <button
@@ -59,39 +50,37 @@ const Page_sign_in = function ()
                     async function ()
                     {
                         // inputs
-                        const username = ref_input_username.current.value
-                        const password = ref_input_password.current.value
+                        const pavadinimas = ref_input_pavadinimas.current.value
 
-                        // service_sign_in
+                        // service_kategorijos_create
 
-                        set_state_overlay_message("service_sign_in...")
+                        set_state_overlay_message("service_kategorijos_create...")
 
-                        const result_of_service_sign_in =
-                            await service_sign_in(
-                                username,
-                                password
+                        const result_of_service_kategorijos_create =
+                            await service_kategorijos_create(
+                                pavadinimas
                             )
-
+                        
                         set_state_overlay_message(null)
 
                         // error:
-                        if (result_of_service_sign_in.status === "error")
+                        if (result_of_service_kategorijos_create.status === "error")
                         {
                             set_state_alert_message(
-                                result_of_service_sign_in.message
-                            )
+                                result_of_service_kategorijos_create.message
+                                )
                             return
                         }
 
                         // success:
 
-                        set_state_username(username)
+                        set_state_alert_message("Success")
                     }
                 }
-            >Sing-in</button>
+            >Kurti kategorija</button>
 
         </main>
     </>
 }
 
-export default Page_sign_in
+export default Page_kategorijos

@@ -9,37 +9,27 @@ const model_users_read = async function (
 
     const query = param_query
 
-    // projection
-
-    const projection = param_projection
-
-    // skip
-
-    // limit
-
-    // sort
-
     // options
 
     const options =
     {
-        projection: projection
     }
 
+    if (param_projection !== undefined) options.projection = param_projection
+
     // findOne
+
     const result_of_findOne =
         await config_users.mongodb_client
             .findOne(query, options)
 
-    // error: username does not exist
+    // error: does not exists
 
-    if (result_of_findOne === null) throw new Error("Username does not exist")
+    if (result_of_findOne === null) throw new Error("does not exists")
 
     // success
 
-    const document = result_of_findOne
-
-    return document
+    return result_of_findOne
 }
 
 export default model_users_read

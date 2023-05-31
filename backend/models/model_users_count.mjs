@@ -1,23 +1,21 @@
 import config_users from "../config/config_users.mjs"
 
 const model_users_count = async function (
-    param_username,
+    param_query,
     param_limit
 )
 {
     // query
 
-    const query =
-    {
-        username: param_username
-    }
+    const query = param_query
 
     // options
 
     const options =
     {
-        limit: param_limit
     }
+
+    if (param_limit !== undefined) options.limit = param_limit
 
     // countDocuments
 
